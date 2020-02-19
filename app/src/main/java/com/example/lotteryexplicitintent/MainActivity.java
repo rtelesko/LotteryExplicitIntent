@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     public void sendData(View view) {
         // Define Intent
         Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+
+        /* Alternative Bundle notation
+         * https://stackoverflow.com/questions/34607727/how-to-add-pass-multiple-values-to-intent-object
+         */ https://zocada.com/using-intents-extras-pass-data-activities-android-beginners-guide/
+
         // Pass Data
         intent.putExtra("NAME", etNamePlayer.getText().toString());
         intent.putExtra("NUMBER_TIPS", spNumberTips.getSelectedItem().toString());

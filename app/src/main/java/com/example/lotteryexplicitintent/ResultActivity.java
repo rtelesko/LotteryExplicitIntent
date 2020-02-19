@@ -39,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
         tvCostsTips.setText("Costs in CHF: " + costTips);
 
         // Button for returning back to Main Activity
-        btReturnToMain = (Button) findViewById(R.id.btReturnToMain);
+        btReturnToMain = findViewById(R.id.btReturnToMain);
         btReturnToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
