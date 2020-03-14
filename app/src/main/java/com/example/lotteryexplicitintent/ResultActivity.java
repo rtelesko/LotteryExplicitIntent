@@ -15,6 +15,9 @@ public class ResultActivity extends AppCompatActivity {
     private TextView tvCostsTips;
     private Button btReturnToMain;
 
+    // Data to pass between the two activities
+    String namePlayer, numberTips;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +29,12 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        // Get data
-        String namePlayer = intent.getStringExtra("NAME");
-        String numberTips = intent.getStringExtra("NUMBER_TIPS");
+        // Check if Intent is not empty and has data
+        if (intent != null && intent.hasExtra("NAME") && intent.hasExtra("NUMBER_TIPS")) {
+            // Get data
+            namePlayer = intent.getStringExtra("NAME");
+            numberTips = intent.getStringExtra("NUMBER_TIPS");
+        }
 
         // Calculation of tip costs
         int tips = Integer.parseInt(numberTips);
@@ -44,8 +50,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                // Alternative
-                // onBackPressed();
+                // Alternative onBackPressed();
             }
         });
 
