@@ -24,16 +24,14 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         // Get reference to the TextViews
-        tvNamePlayer = (TextView) findViewById(R.id.tvNamePlayer);
-        tvCostsTips = (TextView) findViewById(R.id.tvCostsTips);
-
-        Intent intent = getIntent();
+        tvNamePlayer = findViewById(R.id.tvNamePlayer);
+        tvCostsTips = findViewById(R.id.tvCostsTips);
 
         // Check if Intent is not empty and has data
-        if (intent != null && intent.hasExtra("NAME") && intent.hasExtra("NUMBER_TIPS")) {
+        if (getIntent().hasExtra("NAME") && getIntent().hasExtra("NUMBER_TIPS")) {
             // Get data
-            namePlayer = intent.getStringExtra("NAME");
-            numberTips = intent.getStringExtra("NUMBER_TIPS");
+            namePlayer = getIntent().getStringExtra("NAME");
+            numberTips = getIntent().getStringExtra("NUMBER_TIPS");
         }
 
         // Calculation of tip costs
