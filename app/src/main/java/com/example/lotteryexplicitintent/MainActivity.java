@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(etNamePlayer.getText().toString()))
             Toast.makeText(this, "Please enter a username", Toast.LENGTH_SHORT).show();
         else {
+            // Normally, when we launch a new activity, the previous activities will be kept in a queue like a stack of activities.
+            // So if you want to kill all the previous activities, use FLAG_ACTIVITY_CLEAR_TASK and FLAG_ACTIVITY_NEW_TASK flag
+            // on the Intent to clear all the activity stack.
+            // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }
